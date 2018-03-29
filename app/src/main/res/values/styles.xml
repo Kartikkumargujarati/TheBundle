@@ -8,4 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="ProgressBarSpinnerThemeFullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/color_tint</item>
+        <item name="android:alertDialogStyle">@style/CustomProgressSpinnerStyle</item>
+        <item name="android:windowBackground">@color/color_transparent</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="CustomProgressSpinnerStyle">
+        <item name="android:bottomBright">@color/color_transparent</item>
+        <item name="android:bottomDark">@color/color_transparent</item>
+        <item name="android:bottomMedium">@color/color_transparent</item>
+        <item name="android:centerBright">@color/color_transparent</item>
+        <item name="android:centerDark">@color/color_transparent</item>
+        <item name="android:centerMedium">@color/color_transparent</item>
+        <item name="android:fullBright">@color/color_transparent</item>
+        <item name="android:fullDark">@color/color_transparent</item>
+        <item name="android:topBright">@color/color_transparent</item>
+        <item name="android:topDark">@color/color_transparent</item>
+    </style>
+
 </resources>
