@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--                    global colors                   -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="color_onpressbuttonbackground">#66c4c4c4</color>
+    <color name="color_highlight">#ffffffff</color>
+    <color name="color_tint">#3391ff</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_semi_transparent">#70000000</color>
 </resources>
