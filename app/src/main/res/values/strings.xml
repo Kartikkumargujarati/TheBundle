@@ -2,4 +2,23 @@
     <string name="app_name">TheBundle</string>
     <string name="title_activity_on_boarding">OnBoardingActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="on_boarding">OnBoardingActivity</string>
+
+    <!--                            OnBoarding ViewPager                            -->
+    <string name="on_boarding_next_btn_txt">NEXT</string>
+    <string name="on_boarding_lets_go_btn_txt">LET\'S GO</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_username_or_password">This username or password is incorrect</string>
+
+    <string name="error_field_required">This field is required</string>
+
 </resources>
