@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.Toolbar
-import com.kartik.thebundle.onboarding.OnBoardingActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view ->
 
-            startActivity(Intent(this, OnBoardingActivity::class.java))
+            startActivity(Intent(this, Main2Activity::class.java))
 
         }
     }

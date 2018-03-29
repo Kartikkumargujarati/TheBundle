@@ -1,5 +1,6 @@
 package com.kartik.thebundle.onboarding
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 
 import android.support.v4.app.Fragment
@@ -7,28 +8,56 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
-import android.widget.TextView
+import android.widget.Button
+import android.widget.ImageView
 
 import com.kartik.thebundle.R
+import com.kartik.thebundle.login.LoginActivity
 import com.viewpagerindicator.CirclePageIndicator
 
 class OnBoardingActivity : AppCompatActivity() {
 
-    private var mPagerAdapter: PagerAdapter? = null
-    private var mViewPager: ViewPager? = null
+    private lateinit var mPagerAdapter: PagerAdapter
+    private lateinit var mViewPager: ViewPager
+    private lateinit var mPagerBtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.on_boarding)
 
+        mPagerBtn = findViewById<View>(R.id.pager_btn) as Button
         mPagerAdapter = PagerAdapter(supportFragmentManager)
         mViewPager = findViewById<View>(R.id.container) as ViewPager
-        mViewPager!!.adapter = mPagerAdapter
+        mViewPager.adapter = mPagerAdapter
         (findViewById<View>(R.id.indicator) as CirclePageIndicator).setViewPager(mViewPager)
+        mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrollStateChanged(state: Int) {
+            }
+
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                if (position == 2) {
+                    mPagerBtn.visibility = View.VISIBLE
+                    mPagerBtn.text = resources.getText(R.string.on_boarding_lets_go_btn_txt)
+                } else {
+                    mPagerBtn.visibility = View.GONE
+                }
+            }
+
+        })
+        PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("Is_First_launch", false).apply()
+        mPagerBtn.setOnClickListener({navigateToLogin()})
+    }
+
+    private fun navigateToLogin() {
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
 
@@ -37,8 +66,10 @@ class OnBoardingActivity : AppCompatActivity() {
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                                   savedInstanceState: Bundle?): View? {
             val rootView = inflater.inflate(R.layout.fragment_on_boarding, container, false)
-            val textView = rootView.findViewById<View>(R.id.section_label) as TextView
-            textView.text = getString(R.string.section_format, arguments!!.getInt(ARG_SECTION_NUMBER))
+            val imageView = rootView.findViewById<View>(R.id.on_boarding_image) as ImageView
+            val idwithName = "onboarding_screen" + arguments!!.getInt(ARG_SECTION_NUMBER)
+            val actualId = resources.getIdentifier(idwithName, "drawable", activity!!.packageName)
+            imageView.setImageDrawable(resources.getDrawable(actualId, null))
             return rootView
         }
 

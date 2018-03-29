@@ -12,30 +12,32 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_above="@+id/bottom_bar"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <RelativeLayout
-        android:id="@+id/bottom_bar"
+        android:id="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true">
 
         <com.viewpagerindicator.CirclePageIndicator
             android:id="@+id/indicator"
             android:padding="10dip"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_centerInParent="true"
             app:fillColor="@color/colorPrimary" />
 
         <Button
-            android:id="@+id/skip"
+            android:id="@+id/pager_btn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="10dp"
+            android:layout_centerVertical="true"
             android:background="@android:color/transparent"
-            android:text="SKIP"
-            android:layout_alignParentEnd="true"/>
+            android:foreground="@drawable/button_foreground"
+            />
     </RelativeLayout>
 
 </RelativeLayout>
