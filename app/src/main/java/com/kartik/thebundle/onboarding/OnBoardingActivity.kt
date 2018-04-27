@@ -28,13 +28,12 @@ class OnBoardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.on_boarding)
-
         mPagerBtn = findViewById<View>(R.id.pager_btn) as Button
         mPagerAdapter = PagerAdapter(supportFragmentManager)
         mViewPager = findViewById<View>(R.id.container) as ViewPager
         mViewPager.adapter = mPagerAdapter
         (findViewById<View>(R.id.indicator) as CirclePageIndicator).setViewPager(mViewPager)
-        mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+        mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
             override fun onPageScrollStateChanged(state: Int) {
             }
 
@@ -49,10 +48,9 @@ class OnBoardingActivity : AppCompatActivity() {
                     mPagerBtn.visibility = View.GONE
                 }
             }
-
         })
         PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("Is_First_launch", false).apply()
-        mPagerBtn.setOnClickListener({navigateToLogin()})
+        mPagerBtn.setOnClickListener({ navigateToLogin() })
     }
 
     private fun navigateToLogin() {
@@ -60,11 +58,10 @@ class OnBoardingActivity : AppCompatActivity() {
         finish()
     }
 
-
     class FragmentHolder : Fragment() {
 
         override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                                  savedInstanceState: Bundle?): View? {
+                savedInstanceState: Bundle?): View? {
             val rootView = inflater.inflate(R.layout.fragment_on_boarding, container, false)
             val imageView = rootView.findViewById<View>(R.id.on_boarding_image) as ImageView
             val idwithName = "onboarding_screen" + arguments!!.getInt(ARG_SECTION_NUMBER)

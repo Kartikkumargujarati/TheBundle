@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+
     tools:context="com.kartik.thebundle.onboarding.OnBoardingActivity">
 
     <android.support.v4.view.ViewPager
@@ -26,7 +27,7 @@
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_centerInParent="true"
-            app:fillColor="@color/colorPrimary" />
+            app:fillColor="@color/colorPrimary"/>
 
         <Button
             android:id="@+id/pager_btn"
@@ -36,8 +37,7 @@
             android:paddingBottom="10dp"
             android:layout_centerVertical="true"
             android:background="@android:color/transparent"
-            android:foreground="@drawable/button_foreground"
-            />
+            android:foreground="@drawable/button_foreground"/>
     </RelativeLayout>
 
 </RelativeLayout>
