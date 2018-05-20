@@ -1,4 +1,4 @@
-package com.kartik.thebundle
+package com.kartik.thebundle.ui.feature
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.Menu
 import android.support.v7.widget.SearchView
 import android.util.Log
 import android.view.MenuItem
-
+import com.kartik.thebundle.R
 
 class Main2Activity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class Main2Activity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
-        getMenuInflater().inflate( R.menu.search, menu)
+        getMenuInflater().inflate(R.menu.search, menu)
 
         val menuItem:MenuItem = menu.findItem(R.id.action_search)
         val searchView:SearchView = menuItem.actionView as SearchView

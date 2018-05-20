@@ -1,10 +1,11 @@
-package com.kartik.thebundle
+package com.kartik.thebundle.ui.feature
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v7.widget.Toolbar
+import com.kartik.thebundle.R
 
 class MainActivity : AppCompatActivity() {
 

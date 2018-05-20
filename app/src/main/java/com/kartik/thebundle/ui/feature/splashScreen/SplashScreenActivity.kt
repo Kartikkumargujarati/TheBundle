@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.preference.PreferenceManager
-import com.kartik.thebundle.MainActivity
+import com.kartik.thebundle.ui.feature.MainActivity
 import com.kartik.thebundle.R
 import com.kartik.thebundle.base.RepositoryImpl
 import com.kartik.thebundle.onboarding.OnBoardingActivity
 import android.view.WindowManager
 
-class SplashScreen : AppCompatActivity(), SplashScreenView {
+class SplashScreenActivity : AppCompatActivity(), SplashScreenView {
 
     private lateinit var presenter: SplashScreenPresenter
 
@@ -30,11 +30,11 @@ class SplashScreen : AppCompatActivity(), SplashScreenView {
     }
 
     override fun showOnboarding() {
-        startActivity(Intent(this@SplashScreen, OnBoardingActivity::class.java))
+        startActivity(Intent(this@SplashScreenActivity, OnBoardingActivity::class.java))
     }
 
     override fun showLoginScreen() {
-        startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+        startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
     }
 
     override fun finishSplashScreen() {

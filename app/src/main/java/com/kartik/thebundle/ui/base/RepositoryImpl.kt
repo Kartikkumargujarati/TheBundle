@@ -1,7 +1,6 @@
 package com.kartik.thebundle.base
 
 import android.content.SharedPreferences
-import android.os.Handler
 
 /**
  * Created by Kartik Kumar Gujarati on 4/27/18 4:08 PM

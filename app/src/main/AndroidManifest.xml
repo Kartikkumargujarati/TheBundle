@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".splashScreen.SplashScreen"
+            android:name=".splashScreen.SplashScreenActivity"
             android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -25,13 +25,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Main2Activity"
+            android:name=".ui.feature.Main2Activity"
             android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".onboarding.OnBoardingActivity"
             android:label="@string/title_activity_on_boarding"
             android:theme="@style/OnBoarding"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".ui.feature.MainActivity"/>
         <activity
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"></activity>
